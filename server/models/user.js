@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: new Date(),
   },
-  notes: [],
+  data: {},
 });
 
 const User = mongoose.model("User", userSchema);
