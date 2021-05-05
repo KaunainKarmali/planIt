@@ -1,29 +1,61 @@
 import mongoose from "mongoose";
 
-// Note schema
-const noteSchema = new mongoose.Schema({
-  title: String,
-  content: String,
+// Item schema
+const itemSchema = new mongoose.Schema({
+  itemName: String,
+  itemPriority: String,
+  itemAssignedTo: String,
+  itemDueDate: Date,
+  itemTracking: {
+    type: [
+      {
+        duration: Number,
+        createdAt: {
+          type: Date,
+          default: new Date(),
+        },
+      },
+    ],
+  },
 });
 
-// Board schema
-const boardSchema = new mongoose.Schema({
-  board: {
+// Project schema
+const projectSchema = new mongoose.Schema({
+  projectName: {
     type: String,
   },
-  notes: {
-    type: [noteSchema],
+  projectCreationDate: {
+    type: Date,
+    default: new Date(),
+  },
+  creatorName: {
+    type: String,
+  },
+  teamMemberNames: {
+    type: [],
+  },
+  startDate: {
+    type: Date,
+  },
+  dueDate: {
+    type: Date,
+  },
+  engagementCode: {
+    type: String,
+  },
+  list: {
+    type: [itemSchema],
   },
 });
 
 // User schema
 const userSchema = new mongoose.Schema({
   ip: String,
-  creationDate: {
+  userCreationDate: {
     type: Date,
     default: new Date(),
   },
-  data: [boardSchema],
+  projects: [projectSchema],
 });
 
 const User = mongoose.model("User", userSchema);

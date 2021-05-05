@@ -28,7 +28,7 @@ export async function createUser(req, res) {
 
   try {
     await newUser.save();
-    res.status(201).json(user);
+    res.status(201).json(newUser);
   } catch (error) {
     console.log(error);
     res.status(409).json({ message: error.message });

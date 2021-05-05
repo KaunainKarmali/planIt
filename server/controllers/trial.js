@@ -47,3 +47,27 @@ export async function createNote(req, res) {
     res.status(409).json({ message: error });
   }
 }
+
+export async function createProject(req, res) {
+  const { userId, newProject } = req.body;
+
+  const update = { $push: { projects: newProject } };
+
+  const options = {
+    useFindAndModify: false,
+    new: true,
+  };
+
+  try {
+    const status = await User.findByIdAndUpdate(userId, update, options).exec();
+    if (status._id.toString() === userId.toString()) {
+      res.status(201).json({ message: status });
+    } else {
+      console.log(status);
+      res.status(409).json({ message: status });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(409).json({ message: error });
+  }
+}
