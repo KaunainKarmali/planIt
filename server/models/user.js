@@ -1,21 +1,22 @@
 import mongoose from "mongoose";
 
+const timeTrackingSchema = new mongoose.Schema({
+  duration: { type: Number },
+  createdAt: {
+    type: Date,
+    default: new Date(),
+  },
+});
+
 // Item schema
 const itemSchema = new mongoose.Schema({
   itemName: String,
   itemPriority: String,
   itemAssignedTo: String,
   itemDueDate: Date,
+  itemStatus: String,
   itemTracking: {
-    type: [
-      {
-        duration: Number,
-        createdAt: {
-          type: Date,
-          default: new Date(),
-        },
-      },
-    ],
+    type: [timeTrackingSchema],
   },
 });
 

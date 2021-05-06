@@ -71,3 +71,31 @@ export async function createProject(req, res) {
     res.status(409).json({ message: error });
   }
 }
+
+export async function createItem(req, res) {
+  const { userId, projectId, newItem } = req.body;
+
+  const query = {
+    $and: [{ _id: userId }, { projects: { $elemMatch: { _id: projectId } } }],
+  };
+
+  const update = { $push: { "projects.$.list": newItem } };
+
+  const options = {
+    useFindAndModify: false,
+    new: true,
+  };
+
+  try {
+    const status = await User.findOneAndUpdate(query, update, options).exec();
+    if (status._id.toString() === userId.toString()) {
+      res.status(201).json({ message: status });
+    } else {
+      console.log(status);
+      res.status(409).json({ message: status });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(409).json({ message: error });
+  }
+}
