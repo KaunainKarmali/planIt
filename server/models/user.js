@@ -15,6 +15,7 @@ const itemSchema = new mongoose.Schema({
   itemAssignedTo: String,
   itemDueDate: Date,
   itemStatus: String,
+  itemDuration: Number,
   itemTracking: {
     type: [timeTrackingSchema],
   },

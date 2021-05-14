@@ -74,6 +74,7 @@ export async function createProject(req, res) {
 
 export async function createItem(req, res) {
   const { userId, projectId, newItem } = req.body;
+  console.log(newItem);
 
   const query = {
     $and: [{ _id: userId }, { projects: { $elemMatch: { _id: projectId } } }],
@@ -97,5 +98,63 @@ export async function createItem(req, res) {
   } catch (error) {
     console.log(error);
     res.status(409).json({ message: error });
+  }
+}
+
+export async function saveDuration(req, res) {
+  const { userId, timeObject } = req.body;
+
+  const user = await User.findOne({ _id: userId });
+
+  const projectIndex = user.projects.findIndex(
+    (element) => element._id.toString() === timeObject.projectId.toString()
+  );
+
+  const itemIndex = user.projects[projectIndex].list.findIndex(
+    (element) => element._id.toString() === timeObject.itemId.toString()
+  );
+
+  console.log(user.projects[projectIndex].list[itemIndex]);
+
+  user.projects[projectIndex].list[itemIndex].itemDuration +=
+    timeObject.duration;
+
+  console.log(user.projects[projectIndex].list[itemIndex]);
+
+  user.save();
+
+  // console.log(user.projects);
+  // console.log(projectIndex);
+  // console.log(user.projects[projectIndex]);
+
+  // const itemIndex = user.projects[projectIndex].list.map((item, index) => {
+  // console.log(item);
+  // console.log(index);
+  // if (item._id === timeObject.itemId) {
+  // return index;
+  // }
+  // });
+
+  // console.log(itemIndex);
+
+  // console.log(query);
+
+  // const update = { "list.$.duration": timeObject.duration };
+
+  // const options = {
+  //   useFindAndModify: false,
+  //   new: true,
+  // };
+
+  try {
+    // if (status._id.toString() === userId.toString()) {
+    //   res.status(201).json({ message: status });
+    // } else {
+    //   console.log(status);
+    //   res.status(409).json({ message: status });
+    // }
+  } catch (error) {
+    // console.log(error);
+    // res.status(409).json({ message: error });
   }
 }
