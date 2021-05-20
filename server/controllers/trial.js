@@ -74,7 +74,6 @@ export async function createProject(req, res) {
 
 export async function createItem(req, res) {
   const { userId, projectId, newItem } = req.body;
-  console.log(newItem);
 
   const query = {
     $and: [{ _id: userId }, { projects: { $elemMatch: { _id: projectId } } }],
@@ -100,21 +99,70 @@ export async function createItem(req, res) {
   }
 }
 
+export async function deleteItem(req, res) {
+  const { userId, projectId, itemId } = req.body;
+
+  try {
+    const user = await User.findOne({ _id: userId });
+
+    const projectIndex = user.projects.findIndex((element) => {
+      return element._id.toString() === projectId.toString();
+    });
+
+    const itemIndex = user.projects[projectIndex].list.filter((element) => {
+      return element._id.toString() === itemId.toString();
+    });
+
+    // delete item from list in the user object
+    user.projects[projectIndex].list.splice(itemIndex, 1);
+
+    user.save();
+
+    res.status(200).json({ user });
+  } catch (error) {
+    console.log(error);
+    res.status(409).json({ message: error });
+  }
+}
+
+export async function loadDuration(req, res) {
+  const { userId, projectId, itemId } = req.query;
+
+  try {
+    const user = await User.findOne({ _id: userId });
+
+    const projectIndex = user.projects.findIndex((element) => {
+      return element._id.toString() === projectId.toString();
+    });
+
+    const itemIndex = user.projects[projectIndex].list.findIndex((element) => {
+      return element._id.toString() === itemId.toString();
+    });
+
+    const duration = user.projects[projectIndex].list[itemIndex].itemDuration;
+
+    res.status(201).json({ message: duration });
+  } catch (error) {
+    console.log(error);
+    res.status(409).json({ message: error });
+  }
+}
+
 export async function saveDuration(req, res) {
   const { userId, timeObject } = req.body;
 
   try {
     const user = await User.findOne({ _id: userId });
 
-    const projectIndex = user.projects.findIndex(
-      (element) => element._id.toString() === timeObject.projectId.toString()
-    );
+    const projectIndex = user.projects.findIndex((element) => {
+      return element._id.toString() === timeObject.projectId.toString();
+    });
 
-    const itemIndex = user.projects[projectIndex].list.findIndex(
-      (element) => element._id.toString() === timeObject.itemId.toString()
-    );
+    const itemIndex = user.projects[projectIndex].list.findIndex((element) => {
+      return element._id.toString() === timeObject.itemId.toString();
+    });
 
-    user.projects[projectIndex].list[itemIndex].itemDuration +=
+    user.projects[projectIndex].list[itemIndex].itemDuration =
       timeObject.duration;
 
     user.save();
