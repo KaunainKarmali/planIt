@@ -9,6 +9,7 @@ import {
   saveDuration,
   loadDuration,
   deleteItem,
+  editItem,
 } from "../controllers/trial.js";
 
 // callback function called when visiting localhost:5000/trial
@@ -19,6 +20,9 @@ router.post("/create-project", createProject);
 
 // callback function called when visiting localhost:5000/trial/create-item
 router.post("/create-item", createItem);
+
+// callback function called when visiting localhost:5000/trial/edit-item
+router.post("/edit-item", editItem);
 
 // callback function called when visiting localhost:5000/trial/delete-item
 router.post("/delete-item", deleteItem);

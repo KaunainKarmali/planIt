@@ -99,6 +99,33 @@ export async function createItem(req, res) {
   }
 }
 
+export async function editItem(req, res) {
+  const { userId, projectId, edittedItem } = req.body;
+
+  try {
+    const user = await User.findOne({ _id: userId });
+
+    const projectIndex = user.projects.findIndex((element) => {
+      return element._id.toString() === projectId.toString();
+    });
+
+    const itemIndex = user.projects[projectIndex].list.findIndex((element) => {
+      return element._id.toString() === edittedItem._id.toString();
+    });
+
+    user.projects[projectIndex].list[itemIndex] = edittedItem;
+
+    // console.log(user.projects[projectIndex].list[itemIndex]);
+
+    user.save();
+
+    res.status(201).json({ message: user });
+  } catch (error) {
+    console.log(error);
+    res.status(409).json({ message: error });
+  }
+}
+
 export async function deleteItem(req, res) {
   const { userId, projectId, itemId } = req.body;
 
