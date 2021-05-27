@@ -18,6 +18,7 @@ import {
 import AvatarGroup from "@material-ui/lab/AvatarGroup";
 import { UserContext, TimerContext, ProjectContext } from "../../Context";
 import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
+import { BarGraph } from "../../components";
 
 import { saveDuration, loadDuration } from "../../api";
 import { formatDuration } from "../../services/utils";
@@ -202,12 +203,13 @@ export default function DashboardMain() {
             <Grid item sm={12} md={6} lg={8}>
               <Card className={componentClasses.card}>
                 <div style={{ margin: "20px" }}>
-                  <Grid
+                  <BarGraph projects={user.projects} />
+                  {/* <Grid
                     container
                     spacing={3}
                     justify="center"
                     alignItems="center"
-                  ></Grid>
+                  ></Grid> */}
                 </div>
               </Card>
             </Grid>

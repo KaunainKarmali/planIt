@@ -4,6 +4,7 @@ import ProjectMain from "./ProjectMain/ProjectMain";
 import CloseConfirmationDialog from "./CloseConfirmationDialog/CloseConfirmationDialog";
 import CreateNewItem from "./CreateNewItem/CreateNewItem";
 import DashboardMain from "./DashboardMain/DashboardMain";
+import BarGraph from "./BarGraph/BarGraph";
 
 export {
   Header,
@@ -12,4 +13,5 @@ export {
   CloseConfirmationDialog,
   CreateNewItem,
   DashboardMain,
+  BarGraph,
 };
