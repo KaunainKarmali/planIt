@@ -19,6 +19,7 @@ import AvatarGroup from "@material-ui/lab/AvatarGroup";
 import { UserContext, TimerContext, ProjectContext } from "../../Context";
 import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
 import { BarGraph } from "../../components";
+import AssessmentIcon from "@material-ui/icons/Assessment";
 
 import { saveDuration, loadDuration } from "../../api";
 import { formatDuration } from "../../services/utils";
@@ -203,14 +204,39 @@ export default function DashboardMain() {
             <Grid item sm={12} md={6} lg={8}>
               <Card className={componentClasses.card}>
                 <div style={{ margin: "20px" }}>
-                  <BarGraph projects={user.projects} />
-                  {/* <Grid
+                  <Grid
                     container
                     spacing={3}
                     justify="center"
                     alignItems="center"
-                  ></Grid> */}
+                  >
+                    <Grid item>
+                      <AssessmentIcon
+                        style={{
+                          color: "#f4d160",
+                          width: "50px",
+                          height: "50px",
+                        }}
+                      />
+                    </Grid>
+                    <Grid item style={{ textAlign: "left" }}>
+                      <Typography
+                        variant="h5"
+                        component="h2"
+                        style={{ fontWeight: "bold" }}
+                      >
+                        Project metrics
+                      </Typography>
+                      <Typography variant="body1" component="h2">
+                        Time spent on each project
+                      </Typography>
+                    </Grid>
+                  </Grid>
                 </div>
+                <Divider
+                  style={{ height: "3px", backgroundColor: "#f4d160" }}
+                />
+                <BarGraph projects={user.projects} />
               </Card>
             </Grid>
           </Grid>
