@@ -18,8 +18,8 @@ The following tech stack was used in the development of planIt:
 
 ## Getting started
 Begin using the app by performing the following:
-* Run `npm start` in the client folder
-* Run `nodemon index.js` in the server folder
+* Run `npm start` while in the client folder
+* Run `node index.js` or `nodemon index.js` while in the server folder
 
 ## Features
 The following features exist:
