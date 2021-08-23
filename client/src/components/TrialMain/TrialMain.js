@@ -9,6 +9,7 @@ import {
   Button,
   ThemeProvider,
   Card,
+  Divider,
 } from "@material-ui/core";
 import { UserContext } from "../../Context";
 import CreateProject from "../CreateProject/CreateProject";
@@ -26,6 +27,16 @@ export default function TrialMain() {
     <>
       <div className={componentClasses.container}>
         <ThemeProvider theme={theme}>
+          {/* Page title */}
+          <Typography align="left" color="primary" gutterBottom variant="h3">
+            Projects
+          </Typography>
+          <Divider
+            variant="fullWidth"
+            light
+            style={{ backgroundColor: "#f4d160", height: "2px" }}
+            className={componentClasses.divider}
+          />
           <Grid
             container
             display="flex"
