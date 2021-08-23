@@ -18,7 +18,15 @@ The following tech stack was used in the development of planIt:
 
 ## Getting started
 Begin using the app by performing the following:
+
+Begin running the UI
+* Run `cd client` to get into the client folder
+* Run `npm i` to install dependencies
 * Run `npm start` while in the client folder
+
+Begin running the server
+* Run `cd server` to get into the server folder
+* Run `npm i` to install dependencies
 * Run `node index.js` or `nodemon index.js` while in the server folder
 
 ## Features
