@@ -22,8 +22,6 @@ app.use("/signup", signupRoutes);
 // Route to http://localhost:5000/trial
 app.use("/trial", trialRoutes);
 
-app.get("/", (req, res) => res.send("Hello from Express!"));
-
 const PORT = process.env.PORT || 5000;
 
 // Connect server to local database
@@ -36,5 +34,8 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => app.listen(PORT, () => console.log(`Listening on port: ${PORT}`)))
+  .then(() => {
+    app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
+    app.get("/", (req, res) => res.send("Hello from Express!"));
+  })
   .catch((error) => console.log(error));
