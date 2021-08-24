@@ -1,16 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import globalThemes from "../../styles/globalThemes.js";
-import useGlobalStyles from "../../styles/globalStyles.js";
 import useStyles from "./styles";
-import {
-  Container,
-  Grid,
-  Typography,
-  Button,
-  ThemeProvider,
-  Card,
-  Divider,
-} from "@material-ui/core";
+import { Grid, Typography, ThemeProvider, Divider } from "@material-ui/core";
 import { UserContext } from "../../Context";
 import CreateProject from "../CreateProject/CreateProject";
 import ProjectCard from "../ProjectCard/ProjectCard";
@@ -18,10 +9,9 @@ import { v4 as uuidv4 } from "uuid";
 
 export default function TrialMain() {
   const theme = globalThemes;
-  const classes = useGlobalStyles();
   const componentClasses = useStyles();
 
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   return (
     <>

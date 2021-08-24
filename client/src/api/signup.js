@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // create url link to the back end route
-const url = "http://localhost:5000/signup";
+const url = "https://plan-it-v1.herokuapp.com/signup";
 
 // function to fetch all the users from the back end
 export async function fetchUser(ip) {

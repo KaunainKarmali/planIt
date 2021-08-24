@@ -1,12 +1,9 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import globalThemes from "../../styles/globalThemes.js";
-import useGlobalStyles from "../../styles/globalStyles.js";
 import useStyles from "./styles";
 import {
-  Container,
   Grid,
   Typography,
-  Button,
   ThemeProvider,
   Divider,
   Avatar,
@@ -14,22 +11,16 @@ import {
 } from "@material-ui/core";
 import AvatarGroup from "@material-ui/lab/AvatarGroup";
 import { UserContext, TimerContext, ProjectContext } from "../../Context";
-import CreateProject from "../CreateProject/CreateProject";
 import StatusColumn from "../StatusColumn/StatusColumn";
-import Timer from "../Timer/Timer";
 import { saveDuration, loadDuration } from "../../api";
 import { formatDuration } from "../../services/utils";
-import ProjectCard from "../ProjectCard/ProjectCard";
-import { v4 as uuidv4 } from "uuid";
-import useSetUserState from "../../services/useSetUserState";
 
 export default function ProjectMain() {
   const theme = globalThemes;
-  const classes = useGlobalStyles();
   const componentClasses = useStyles();
 
   const { user, setUser } = useContext(UserContext);
-  const { project, setProject } = useContext(ProjectContext);
+  const { project } = useContext(ProjectContext);
   const { activeTimer, setActiveTimer } = useContext(TimerContext);
 
   const [toggle, setToggle] = useState(false);

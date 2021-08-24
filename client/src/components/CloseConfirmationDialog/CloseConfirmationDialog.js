@@ -1,7 +1,5 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import globalThemes from "../../styles/globalThemes.js";
-import useGlobalStyles from "../../styles/globalStyles.js";
-import useStyles from "./styles";
 import {
   Dialog,
   ThemeProvider,
@@ -12,19 +10,14 @@ import {
   Typography,
 } from "@material-ui/core";
 import { UserContext, ProjectContext } from "../../Context";
-import { createItem } from "../../api/index";
-import { extractProject } from "../../services/utils";
-import { v4 as uuidv4 } from "uuid";
 import { deleteItem } from "../../api";
 
 export default function CloseConfirmationDialog(props) {
   const theme = globalThemes;
-  const classes = useGlobalStyles();
-  const componentClasses = useStyles();
 
   // Global user state
   const { user, setUser } = useContext(UserContext);
-  const { project, setProject } = useContext(ProjectContext);
+  const { project } = useContext(ProjectContext);
 
   // props manage whether to show dialog box or not
   const { open, setOpen, itemId, itemName } = props;

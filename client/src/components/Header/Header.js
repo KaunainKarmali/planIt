@@ -29,7 +29,7 @@ export default function Header({ landing, sideMenu }) {
   const componentClasses = useStyles();
 
   const [open, setOpen] = useState(false);
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   function toggleDrawer(toggle) {
     setOpen(toggle);

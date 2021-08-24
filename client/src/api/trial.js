@@ -1,7 +1,8 @@
 import axios from "axios";
 
 // create url link to the back end route
-const url = "http://localhost:5000/trial";
+// const url = "http://localhost:5000/trial";
+const url = "https://plan-it-v1.herokuapp.com/trial";
 
 // function to send new note to the back end
 export async function createNote(ip, note, board) {

@@ -1,7 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
-import globalThemes from "../../styles/globalThemes.js";
-import useGlobalStyles from "../../styles/globalStyles";
-import useStyles from "./styles";
+import React, { useEffect, useContext } from "react";
 import { TextField } from "@material-ui/core";
 import { BoardContext } from "../../Context";
 import Autocomplete, {
@@ -11,11 +8,6 @@ import Autocomplete, {
 const filter = createFilterOptions();
 
 function BoardComboBox() {
-  // Themes
-  const theme = globalThemes;
-  const classes = useGlobalStyles();
-  const componentClasses = useStyles();
-
   const { currentBoard, setCurrentBoard } = useContext(BoardContext);
 
   useEffect(() => {}, []);

@@ -1,8 +1,7 @@
-import React, { useEffect, useContext, useState } from "react";
+import React from "react";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import TrialMain from "../components/TrialMain/TrialMain";
-import { UserContext } from "../Context";
 import useSetUserState from "../services/useSetUserState";
 
 function Trial() {

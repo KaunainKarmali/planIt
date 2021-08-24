@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import globalThemes from "../../styles/globalThemes.js";
-import useGlobalStyles from "../../styles/globalStyles.js";
 import useStyles from "./styles";
 import { Button, ThemeProvider } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
@@ -8,7 +7,6 @@ import CreateNewItem from "../CreateNewItem/CreateNewItem";
 
 export default function CreateItem(props) {
   const theme = globalThemes;
-  const classes = useGlobalStyles();
   const componentClasses = useStyles();
 
   const [open, setOpen] = useState(false);

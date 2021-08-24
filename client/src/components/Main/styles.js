@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 import landingImage from "../../images/landing-page-img-2.jpg";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   container: {
     marginTop: "64px",
     position: "relative",

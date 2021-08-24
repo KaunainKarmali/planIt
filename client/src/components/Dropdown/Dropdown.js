@@ -1,16 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
-import globalThemes from "../../styles/globalThemes.js";
-import useGlobalStyles from "../../styles/globalStyles";
-import useStyles from "./styles";
-import { Button, Menu, MenuItem, Popover } from "@material-ui/core";
+import { Button, MenuItem, Popover } from "@material-ui/core";
 import { BoardContext } from "../../Context";
 
 function Dropdown() {
-  // Themes
-  const theme = globalThemes;
-  const classes = useGlobalStyles();
-  const componentClasses = useStyles();
-
   const { currentBoard, setCurrentBoard } = useContext(BoardContext);
   const [anchorEl, setAnchorEl] = useState(null);
 

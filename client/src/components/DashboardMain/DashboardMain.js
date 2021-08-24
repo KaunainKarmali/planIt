@@ -1,37 +1,24 @@
-import React, { useContext, useState, useEffect, useRef } from "react";
+import React, { useContext } from "react";
 import globalThemes from "../../styles/globalThemes.js";
-import useGlobalStyles from "../../styles/globalStyles.js";
 import useStyles from "./styles";
 import {
-  Container,
   Grid,
   Typography,
-  Button,
   ThemeProvider,
   Divider,
-  Avatar,
   Card,
-  CardHeader,
   CardContent,
-  CardActions,
 } from "@material-ui/core";
-import AvatarGroup from "@material-ui/lab/AvatarGroup";
-import { UserContext, TimerContext, ProjectContext } from "../../Context";
+import { UserContext } from "../../Context";
 import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
 import { BarGraph } from "../../components";
 import AssessmentIcon from "@material-ui/icons/Assessment";
 
-import { saveDuration, loadDuration } from "../../api";
-import { formatDuration } from "../../services/utils";
-import { v4 as uuidv4 } from "uuid";
-import useSetUserState from "../../services/useSetUserState";
-
 export default function DashboardMain() {
   const theme = globalThemes;
-  const classes = useGlobalStyles();
   const componentClasses = useStyles();
 
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   const [totalItems, itemsOpen, itemsDone] = extractItemCount(user);
   const totalProjects = user.projects.length;
@@ -278,8 +265,6 @@ function ProgressContainer(props) {
           variant="body1"
           component="p"
           style={{
-            // fontSize: "1.5rem",
-            textAlign: "left",
             backgroundColor: `${counterColor}`,
             color: "black",
             padding: "3px",
