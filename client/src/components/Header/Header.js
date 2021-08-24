@@ -82,6 +82,14 @@ export default function Header({ landing, sideMenu }) {
     );
   }
 
+  /*
+    this header is not accessible:
+    - list items are not marked up as lists
+    - there is a link and a button, navigation should really only be links - with buttons reserved for javascrpt actions,
+    - this is both unstandard and causes a strange tabbed navigation behaviour
+    - set this up as a json data array of link objects and iterate to create a navigation component that is dynamically driven
+    */
+
   return (
     <header>
       <ThemeProvider theme={theme}>
