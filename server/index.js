@@ -12,9 +12,9 @@ import MongoClient from "mongodb";
 
 // setup app
 const app = express();
+app.use(cors());
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
 
 // setup app middleware to manage routes
 // Route to http://localhost:5000/signup
