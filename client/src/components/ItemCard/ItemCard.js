@@ -1,31 +1,18 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState } from "react";
 import globalThemes from "../../styles/globalThemes.js";
-import useGlobalStyles from "../../styles/globalStyles.js";
 import useStyles from "./styles";
 import {
-  Button,
   ThemeProvider,
   Card,
-  CardHeader,
-  CardContent,
   Typography,
   Divider,
-  Box,
   Grid,
   Avatar,
   IconButton,
-  List,
-  ListItem,
-  ListItemText,
-  Dialog,
 } from "@material-ui/core";
 import AvatarGroup from "@material-ui/lab/AvatarGroup";
 import { CreateNewItem } from "../../components";
-import { UserContext, TimerContext, ProjectContext } from "../../Context";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import { Link } from "react-router-dom";
 import DateRangeIcon from "@material-ui/icons/DateRange";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import TimerIcon from "@material-ui/icons/Timer";
 import { formatNameToInitials, dateReformat } from "../../services/utils";
 import CloseIcon from "@material-ui/icons/Close";
@@ -34,12 +21,8 @@ import { CloseConfirmationDialog } from "../../components";
 
 export default function ItemCard(props) {
   const theme = globalThemes;
-  const classes = useGlobalStyles();
   const componentClasses = useStyles();
 
-  const { user, setUser } = useContext(UserContext);
-  const { project, setProject } = useContext(ProjectContext);
-  const { activeTimer, setActiveTimer } = useContext(TimerContext);
   const { item, toggleTimer } = props;
   const [toggleMenu, setToggleMenu] = useState(false);
   const [toggleEditMenu, setToggleEditMenu] = useState(false);

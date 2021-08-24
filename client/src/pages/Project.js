@@ -5,7 +5,7 @@ import useSetUserState from "../services/useSetUserState";
 import { extractProject } from "../services/utils";
 
 export default function Project(props) {
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const { project, setProject } = useContext(ProjectContext);
   const [isLoaded, setIsLoaded] = useState(false);
 

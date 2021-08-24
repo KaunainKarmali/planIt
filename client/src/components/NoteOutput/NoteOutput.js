@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
 import globalThemes from "../../styles/globalThemes.js";
-import useGlobalStyles from "../../styles/globalStyles";
 import useStyles from "./styles";
 import {
   ThemeProvider,
@@ -14,16 +13,13 @@ import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import SwapHorizontalCircleIcon from "@material-ui/icons/SwapHorizontalCircle";
-import { UserContext } from "../../Context";
 
 function NoteInput(props) {
   // Themes
   const theme = globalThemes;
-  const classes = useGlobalStyles();
   const componentClasses = useStyles();
 
   // Global state
-  const { user, setUser } = useContext(UserContext);
   const { title, content } = props;
 
   return (

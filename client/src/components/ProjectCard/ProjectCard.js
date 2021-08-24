@@ -1,16 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import globalThemes from "../../styles/globalThemes.js";
-import useGlobalStyles from "../../styles/globalStyles.js";
 import useStyles from "./styles";
 import {
   Button,
   ThemeProvider,
   Card,
-  CardHeader,
-  CardContent,
   Typography,
   Divider,
-  Box,
   Grid,
 } from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
@@ -18,12 +14,9 @@ import { Link } from "react-router-dom";
 
 export default function ProjectCard(props) {
   const theme = globalThemes;
-  const classes = useGlobalStyles();
   const componentClasses = useStyles();
 
   const { projectName, dueDate, id } = props;
-
-  function handleClick() {}
 
   return (
     <ThemeProvider theme={theme}>

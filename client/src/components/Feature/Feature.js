@@ -1,6 +1,5 @@
 import React from "react";
 import globalThemes from "../../styles/globalThemes.js";
-import useGlobalStyles from "../../styles/globalStyles.js";
 import useStyles from "./styles";
 import {
   Card,
@@ -14,7 +13,6 @@ import {
 
 function Feature() {
   const theme = globalThemes;
-  const classes = useGlobalStyles();
   const componentClasses = useStyles();
 
   return (

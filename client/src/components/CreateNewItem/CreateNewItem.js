@@ -1,7 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
 import globalThemes from "../../styles/globalThemes.js";
-import useGlobalStyles from "../../styles/globalStyles.js";
-import useStyles from "./styles";
 import {
   Dialog,
   ThemeProvider,
@@ -14,20 +12,17 @@ import {
 } from "@material-ui/core";
 import { UserContext, ProjectContext } from "../../Context";
 import { createItem, editItem } from "../../api/index";
-import { extractProject } from "../../services/utils";
 import { v4 as uuidv4 } from "uuid";
 
 export default function CreateNewItem(props) {
   const theme = globalThemes;
-  const classes = useGlobalStyles();
-  const componentClasses = useStyles();
 
   // Global user state
   const { user, setUser } = useContext(UserContext);
 
   // props manage whether to show dialog box or not
   const { open, setOpen, item, edit } = props;
-  const { project, setProject } = useContext(ProjectContext);
+  const { project } = useContext(ProjectContext);
 
   // state stores new project details
   const [newItem, setNewItem] = useState({

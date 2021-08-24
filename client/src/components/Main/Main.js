@@ -10,8 +10,6 @@ import {
   ThemeProvider,
   responsiveFontSizes,
 } from "@material-ui/core";
-import Image from "material-ui-image";
-import landingImage from "../../images/landing-page-img-2.jpg";
 import Feature from "../Feature/Feature";
 import { Link } from "react-router-dom";
 
@@ -19,8 +17,6 @@ function Main(props) {
   const theme = responsiveFontSizes(globalThemes);
   const classes = useGlobalStyles();
   const componentClasses = useStyles();
-
-  const { user, setUser } = props;
 
   return (
     <>

@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect, useRef } from "react";
 import globalThemes from "../../styles/globalThemes.js";
-import useGlobalStyles from "../../styles/globalStyles.js";
 import useStyles from "./styles";
 import { Card, Typography, ThemeProvider } from "@material-ui/core";
 import { UserContext, TimerContext } from "../../Context";
@@ -8,13 +7,12 @@ import { saveDuration } from "../../api";
 
 export default function CreateItem(props) {
   const theme = globalThemes;
-  const classes = useGlobalStyles();
   const componentClasses = useStyles();
 
   const [duration, setDuration] = useState(0);
   const { activeTimer, setActiveTimer } = useContext(TimerContext);
   const { user, setUser } = useContext(UserContext);
-  const { toggle, setToggle } = props;
+  const { toggle } = props;
 
   let timer = useRef(null);
 

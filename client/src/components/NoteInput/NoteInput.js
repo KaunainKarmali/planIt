@@ -1,17 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import globalThemes from "../../styles/globalThemes.js";
-import useGlobalStyles from "../../styles/globalStyles";
 import useStyles from "./styles";
 import { ThemeProvider, Card, IconButton, TextField } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
-import { v4 as uuidv4 } from "uuid";
 import { createNote } from "../../api/index";
 import { UserContext, BoardContext } from "../../Context";
 
 function NoteInput() {
   // Themes
   const theme = globalThemes;
-  const classes = useGlobalStyles();
   const componentClasses = useStyles();
 
   // Global state

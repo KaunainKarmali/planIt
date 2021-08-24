@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
 import globalThemes from "../../styles/globalThemes.js";
-import useGlobalStyles from "../../styles/globalStyles.js";
 import useStyles from "./styles";
 import {
   Dialog,
@@ -16,14 +15,12 @@ import {
 } from "@material-ui/core";
 import FaceIcon from "@material-ui/icons/Face";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
-import AddIcon from "@material-ui/icons/Add";
 import { v4 as uuidv4 } from "uuid";
 import { UserContext } from "../../Context";
 import { createProject } from "../../api/index";
 
 export default function CreateProjectDialog(props) {
   const theme = globalThemes;
-  const classes = useGlobalStyles();
   const componentClasses = useStyles();
 
   // Global user state

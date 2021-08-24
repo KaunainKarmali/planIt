@@ -5,7 +5,7 @@ export async function getUser(req, res) {
   try {
     const ip = req.query.ip;
 
-    await User.findOne({ ip: ip }, function (err, result) {
+    User.findOne({ ip: ip }, function (err, result) {
       if (err !== null) {
         console.log(err);
         res.status(409).json({ message: error });
