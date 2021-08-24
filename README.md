@@ -35,12 +35,16 @@ Begin using the app by performing the following:
   * Run `npm i` to install dependencies
   * Run `npm start` while in the client folder
 
-3. Begin running the server
+3. Update the .env file which stores mongoDB credentials
+ * Rename the `.env.local` file to `.env`
+ * In the file, update the mongo DB username under `MONGODB_USERNAME=` and the mongo DB password under `MONGODB_PASSWORD=`
+
+4. Begin running the server
   * Run `cd server` to get into the server folder
   * Run `npm i` to install dependencies
   * Run `node index.js` or `nodemon index.js` while in the server folder
 
-4. To visit and use the app:
+5. To visit and use the app:
   * Go to `localhost:3000` on your browser
   * Click on start free trial button to use the app as a guest
   * Create a new project by selecting the `+` button
