@@ -14,7 +14,7 @@ The following features exist:
 * Track time spent on each task
 * Review key metrics by visiting your Dashboard
 
-### Project Status
+### Project status
 
 I am constantly looking to improve this project; therefore, this project is currently in development. 
 
