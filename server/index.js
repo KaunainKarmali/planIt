@@ -22,6 +22,8 @@ app.use("/signup", signupRoutes);
 // Route to http://localhost:5000/trial
 app.use("/trial", trialRoutes);
 
+app.get("/", (req, res) => res.send("Hello from Express!"));
+
 const PORT = process.env.PORT || 5000;
 
 // Connect server to local database
