@@ -1,4 +1,4 @@
-# planIt
+# planIt (version 1.0)
 
 ## About
 
