@@ -4,41 +4,43 @@
 
 ### Description
 
-planIt is a trello-inspired project management tool specific designed for service-professionals (e.g. Freelance workers, Developers, Accountants, Lawyers etc.). The purpose of this tool is to help professionals organize their key tasks, deliverables, goals while providing time tracking and provide real time statistics. You can access the live app [here](https://plan-it-v1.netlify.app/).
+planIt is a trello-inspired project management tool specific designed for service-professionals (e.g. Freelance workers, Developers, Accountants, Lawyers etc.). The purpose of this tool is to help professionals organize their key tasks, deliverables, and goals while providing time tracking and real time statistics. You can access the live app [here](https://plan-it-v1.netlify.app/).
 
 ### Key features
 
 The following features exist:
 * Save user progress without having to login
-* Creation of multiple projects, and tasks with deadlines
-* Time tracking at a task level
-* Dashboard providing key statistics
+* Create multiple projects and tasks with deadlines
+* Track time spent on each task
+* Review key metrics by visiting your Dashboard
 
 ### Project Status
 
-This project is currently in development. Currently working on improving user accessibility (i.e. to improve UX when using keyboard or a screen-reader), using more semantic HTML elements, improving site responsiveness, and making the site more pixel perfect!
+While several features have been built out, I am constantly looking to improve this project. Hence, this project is currently in development. 
+
+Currently working on improving user accessibility (i.e. to improve UX when using keyboard or a screen-readers), incorporating more semantic HTML elements, improving site responsiveness, and making the site more pixel perfect!
 
 ## Getting started
 
 Begin using the app by performing the following:
 
-Clone down this repository. You will need `node` or `nodemon` and `npm` installed globally on your machine.
+1. Clone down this repository. You will need `node` or `nodemon` and `npm` installed globally on your machine.
 
-Begin running the UI
-* Run `cd client` to get into the client folder
-* Run `npm i` to install dependencies
-* Run `npm start` while in the client folder
+2. Begin running the UI
+  * Run `cd client` to get into the client folder
+  * Run `npm i` to install dependencies
+  * Run `npm start` while in the client folder
 
-Begin running the server
-* Run `cd server` to get into the server folder
-* Run `npm i` to install dependencies
-* Run `node index.js` or `nodemon index.js` while in the server folder
+3. Begin running the server
+  * Run `cd server` to get into the server folder
+  * Run `npm i` to install dependencies
+  * Run `node index.js` or `nodemon index.js` while in the server folder
 
-To visit and use the app:
-* Go to `localhost:3000` on your browser
-* Click on start free trial button to use the app as a guest
-* Create a new project by selecting the `+` button
-* Clicking on the project once it is created to begin adding tasks
+4. To visit and use the app:
+  * Go to `localhost:3000` on your browser
+  * Click on start free trial button to use the app as a guest
+  * Create a new project by selecting the `+` button
+  * Clicking on the project once it is created to begin adding tasks
 
 ## Technology used
 
