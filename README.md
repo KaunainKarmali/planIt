@@ -4,7 +4,7 @@
 
 ### Description
 
-planIt is a trello-inspired project management tool specific designed for service-professionals (e.g. Freelance workers, Developers, Accountants, Lawyers etc.). The purpose of this tool is to help professionals organize their key tasks, deliverables, goals while providing time tracking and provide real time statistics.
+planIt is a trello-inspired project management tool specific designed for service-professionals (e.g. Freelance workers, Developers, Accountants, Lawyers etc.). The purpose of this tool is to help professionals organize their key tasks, deliverables, goals while providing time tracking and provide real time statistics. You can access the live app [here](https://plan-it-v1.netlify.app/).
 
 ### Key features
 
