@@ -35,7 +35,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
     app.get("/", (req, res) => res.send("Hello from Express!"));
+    app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
   })
   .catch((error) => console.log(error));
